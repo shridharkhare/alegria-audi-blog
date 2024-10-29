@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Blog</title>
+</head>
+<body>
+    
+    <h1>View Blog</h1>
+    
+    <button onclick="window.location.href = '/';">Home</button>
+    <!-- <button onclick="window.location.href = '{{ url_for('blogs') }}';">Back</button> -->
+
+    <div>
+        <h2>{{ blog.title }}</h2>
+        <p><strong>Decription: </strong>{{ blog.description }}</p>
+        <p> <strong>Content: </strong> {{blog.blog}}   </p>
+        <p><strong>Author: </strong>{{ blog.author }}</p>
+    </div>
+
+    <form action="{{ url_for('view_blog', blog_id=blog.id) }}" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+    <hr>
+    <button onclick="window.location.href = '/blogs';">Back</button>
+</body>
+</html>
